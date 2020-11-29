@@ -3,6 +3,7 @@ package com.kangtaejong98.tuview
 import android.os.Bundle
 import com.kangtaejong98.tuview.base.BaseActivity
 import com.kangtaejong98.tuview.databinding.ActivityMainBinding
+import com.kangtaejong98.tuview.notification.NotificationFactory
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun init() {
+        initNotificationChannel()
         initActionBar()
+    }
+
+    private fun initNotificationChannel() {
+        NotificationFactory.createNotificationChannel(this)
     }
 
     private fun initActionBar() {
