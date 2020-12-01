@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.AttributeSet
 import android.view.View
+import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.kangtaejong98.tuview.Protocol.RUNNING_NOTIFICATION_ID
@@ -77,4 +78,6 @@ class TuView : WebView {
             super.onWindowVisibilityChanged(visibility)
         }
     }
+
+
 }

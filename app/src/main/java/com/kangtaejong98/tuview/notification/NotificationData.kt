@@ -4,8 +4,8 @@ import org.jsoup.nodes.Document
 import java.io.Serializable
 
 data class NotificationData(
-        var title: String,
-        var author: String
+        var title: String = "",
+        var author: String = ""
 ) : Serializable {
     companion object {
         fun build(document: Document): NotificationData {

@@ -9,5 +9,7 @@ object Protocol {
 
     const val RUNNING_NOTIFICATION_ID = 1000
 
-    const val YOUTUBE = "https://m.youtube.com/"
+    const val YOUTUBE = "https://www.youtube.com/"
+
+    const val PREVIOUS = "previous"
 }

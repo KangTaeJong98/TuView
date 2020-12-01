@@ -3,7 +3,7 @@
     package="com.kangtaejong98.tuview">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -13,12 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TuView"
         android:usesCleartextTraffic="true">
+        <receiver
+            android:name=".receiver.RunningReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
         <service
             android:name=".service.RunningService"
             android:enabled="true"
             android:exported="true"></service>
 
         <activity
+            android:configChanges="keyboardHidden|orientation|screenSize"
+
             android:name=".MainActivity"
             android:launchMode="singleTop">
             <intent-filter>

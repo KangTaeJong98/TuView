@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.kangtaejong98.tuview.base.BaseActivity
 import com.kangtaejong98.tuview.databinding.ActivityMainBinding
 import com.kangtaejong98.tuview.notification.NotificationFactory
+import com.kangtaejong98.tuview.view.FullScreenChromeClient
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private fun init() {
         initNotificationChannel()
         initActionBar()
+        initTuView()
     }
 
     private fun initNotificationChannel() {
@@ -35,5 +37,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private fun initActionBar() {
         setSupportActionBar(binding.toolbar)
+    }
+
+    private fun initTuView() {
+        binding.tuView.webChromeClient = FullScreenChromeClient(this)
     }
 }
