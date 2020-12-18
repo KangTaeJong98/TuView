@@ -22,6 +22,7 @@ object NotificationFactory {
             setContentText(data.author)
             setContentIntent(contentIntent)
 
+            priority = NOTIFICATION_IMPORTANCE
             addAction(R.drawable.ic_prev_true, "previous", PendingIntent.getBroadcast(context, 0, Intent(context, RunningReceiver::class.java).setAction(PREVIOUS), 0))
         }.build()
     }

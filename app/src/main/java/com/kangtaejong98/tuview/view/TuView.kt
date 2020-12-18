@@ -5,13 +5,13 @@ import android.content.Context
 import android.content.Intent
 import android.util.AttributeSet
 import android.view.View
-import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.kangtaejong98.tuview.Protocol.RUNNING_NOTIFICATION_ID
 import com.kangtaejong98.tuview.Protocol.YOUTUBE
 import com.kangtaejong98.tuview.notification.NotificationData
 import com.kangtaejong98.tuview.notification.NotificationFactory
+import com.kangtaejong98.tuview.receiver.RunningReceiver
 import com.kangtaejong98.tuview.service.RunningService
 import kotlinx.coroutines.*
 import org.jsoup.Jsoup
@@ -60,6 +60,8 @@ class TuView : WebView {
                 updatedUrl = url ?: ""
             }
         }
+
+        RunningReceiver.tuView = this
     }
 
     fun onDestroy() {
